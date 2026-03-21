@@ -1,0 +1,13 @@
+{
+  "lastAgent": "agent-07513e09-de42-48be-a63d-229dfe5ed613",
+  "sessionsByServer": {
+    "192.168.8.103:8283": {
+      "agentId": "agent-07513e09-de42-48be-a63d-229dfe5ed613",
+      "conversationId": "default"
+    }
+  },
+  "lastSession": {
+    "agentId": "agent-07513e09-de42-48be-a63d-229dfe5ed613",
+    "conversationId": "default"
+  }
+}

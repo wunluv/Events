@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mabon Invitation | Autumn Equinox</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Nunito+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        serif: ['Cormorant Garamond', 'Georgia', 'serif'],
+                        sans: ['Nunito Sans', 'system-ui', 'sans-serif'],
+                    },
+                    colors: {
+                        mabon: {
+                            'cream': '#F7F3ED',
+                            'gold': '#D4A853',
+                            'burnt-orange': '#C75B39',
+                            'deep-red': '#8B2942',
+                            'plum': '#5C3D5E',
+                            'forest': '#2D4A3E',
+                            'earth': '#6B4423',
+                            'wheat': '#C9B896',
+                            'gold-light': '#E8D5A3',
+                        },
+                    },
+                    boxShadow: {
+                        'candle': '0 8px 32px rgba(199, 91, 57, 0.25)',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        html, body {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            overflow-x: hidden;
+        }
+
+        body {
+            font-family: 'Nunito Sans', sans-serif;
+            background: #F7F3ED;
+        }
+
+        .invitation-wrapper {
+            min-height: 100vh;
+            overflow-y: auto;
+            overflow-x: hidden;
+        }
+
+        .invitation-container {
+            width: 100%;
+            max-width: 600px;
+            margin: 0 auto;
+            min-height: 100vh;
+            background: linear-gradient(180deg, #F7F3ED 0%, #E8D5A3 50%, #D4A853 100%);
+            overflow: hidden;
+        }
+
+        @media print {
+            body {
+                background: white;
+            }
+            .no-print {
+                display: none;
+            }
+            .invitation-container {
+                width: 100%;
+                height: auto;
+                min-height: 100vh;
+            }
+        }
+
+        /* Full-bleed image container */
+        .image-full {
+            width: 100%;
+            height: 280px;
+            object-fit: cover;
+            object-position: center;
+        }
+
+        .image-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 8px;
+            padding: 8px;
+        }
+
+        .image-grid img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 12px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Scrollable Wrapper -->
+    <div class="invitation-wrapper">
+        <!-- Main Invitation Container -->
+        <div class="invitation-container">
+
+            <!-- Hero Image -->
+            <div class="w-full h-80 overflow-hidden relative">
+                <img src="EquinoxBalance.webp" alt="Autumn Equinox Balance" class="w-full h-full object-cover">
+                <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                <div class="absolute bottom-8 left-0 right-0 text-center">
+                    <span class="text-white text-5xl">⚖</span>
+                </div>
+            </div>
+
+            <!-- Hero Section -->
+            <div class="px-10 pt-12 pb-8 text-center">
+                <!-- Event Title -->
+                <h1 class="font-serif text-7xl leading-none text-mabon-deep-red mb-3 tracking-tight">
+                    Mabon
+                </h1>
+                <p class="text-xl text-mabon-forest uppercase tracking-[0.2em] font-medium">
+                    The Autumn Equinox
+                </p>
+
+                <!-- Tagline -->
+                <p class="text-2xl text-mabon-earth italic mt-8 font-serif">
+                    "In the balance of light and dark, we find our truth."
+                </p>
+            </div>
+
+            <!-- Divider -->
+            <div class="flex items-center justify-center gap-6 px-10 mb-8">
+                <div class="h-px flex-1 bg-gradient-to-r from-transparent to-mabon-gold"></div>
+                <span class="text-3xl text-mabon-gold">✦</span>
+                <div class="h-px flex-1 bg-gradient-to-l from-transparent to-mabon-gold"></div>
+            </div>
+
+            <!-- Image Gallery -->
+            <div class="image-grid mb-8">
+                <img src="EquinoxRitual.webp" alt="Equinox Ritual" class="rounded-xl">
+                <img src="EquinoxWiccans.webp" alt="Wiccans Celebrating" class="rounded-xl">
+            </div>
+
+            <!-- Event Details Card -->
+            <div class="px-10 mb-8">
+                <div class="bg-white/80 backdrop-blur-sm rounded-3xl p-8 shadow-lg">
+                    <!-- Date -->
+                    <div class="text-center mb-8 pb-8 border-b border-mabon-gold/30">
+                        <div class="flex items-center justify-center gap-3 mb-3">
+                            <svg class="w-8 h-8 text-mabon-burnt-orange" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+                            </svg>
+                            <span class="text-3xl font-serif text-mabon-burnt-orange font-semibold">Sunday</span>
+                        </div>
+                        <p class="text-5xl font-serif text-mabon-deep-red leading-none">September 22, 2026</p>
+                    </div>
+
+                    <!-- Time -->
+                    <div class="text-center mb-8 pb-8 border-b border-mabon-gold/30">
+                        <div class="flex items-center justify-center gap-3">
+                            <svg class="w-7 h-7 text-mabon-forest" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                            </svg>
+                            <span class="text-2xl font-serif text-mabon-forest">6:00 PM — 9:00 PM</span>
+                        </div>
+                    </div>
+
+                    <!-- Location -->
+                    <div class="text-center">
+                        <p class="text-lg text-gray-500 uppercase tracking-wider mb-2">Location</p>
+                        <p class="text-3xl font-serif text-mabon-earth">Beeja Mara</p>
+                        <p class="text-xl text-gray-600 mt-2">4 Tor Doone Lane, Hogsback</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Hades/Persephone Image - Myth of Transition -->
+            <div class="px-10 mb-8">
+                <div class="relative rounded-2xl overflow-hidden">
+                    <img src="HadesPersephone.webp" alt="Hades and Persephone - The Myth of Transition" class="w-full h-56 object-cover">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent"></div>
+                    <div class="absolute bottom-6 left-6 right-6">
+                        <p class="text-white/95 text-lg font-medium">"For in the Greek myth, Persephone descends into the Underworld — a moment that marks the mythic turn from light to dark."</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- What to Expect -->
+            <div class="px-10 mb-8">
+                <div class="bg-mabon-cream/90 rounded-2xl p-6">
+                    <h2 class="text-2xl font-serif text-mabon-forest text-center mb-6">What to Expect</h2>
+
+                    <div class="space-y-5">
+                        <div class="flex items-start gap-4">
+                            <span class="text-3xl">⚖️</span>
+                            <div>
+                                <p class="font-bold text-xl text-mabon-deep-red">Balance Ritual</p>
+                                <p class="text-lg text-gray-600">Honor the equilibrium of light & dark</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-4">
+                            <span class="text-3xl">🍎</span>
+                            <div>
+                                <p class="font-bold text-xl text-mabon-deep-red">Harvest Feast</p>
+                                <p class="text-lg text-gray-600">Seasonal refreshments & gratitude sharing</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-4">
+                            <span class="text-3xl">🕯️</span>
+                            <div>
+                                <p class="font-bold text-xl text-mabon-deep-red">Letting Go</p>
+                                <p class="text-lg text-gray-600">Candle ceremony to release what no longer serves</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-4">
+                            <span class="text-3xl">🌾</span>
+                            <div>
+                                <p class="font-bold text-xl text-mabon-deep-red">Community</p>
+                                <p class="text-lg text-gray-600">Connect with like-minded souls</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Description -->
+            <div class="px-10 mb-8">
+                <p class="text-xl text-gray-700 text-center leading-relaxed">
+                    Join us for an evening of <strong class="text-mabon-burnt-orange">ritual, reflection, and community</strong>
+                    as we honor the autumnal equinox—the perfect balance of light and dark. Together we'll give thanks
+                    for the harvest and prepare for the quiet wisdom of winter.
+                </p>
+            </div>
+
+            <!-- CTA Section -->
+            <div class="px-10 mb-8 text-center">
+                <div class="inline-block bg-mabon-deep-red text-white px-12 py-5 rounded-full shadow-candle">
+                    <p class="text-2xl font-bold">RSVP to Attend</p>
+                </div>
+                <p class="text-lg text-gray-500 mt-6">
+                    Please respond by September 20th
+                </p>
+                <p class="text-lg text-mabon-forest mt-3">
+                    Questions? Message us on WhatsApp
+                </p>
+            </div>
+
+            <!-- Footer -->
+            <div class="bg-mabon-forest px-10 py-6 text-center">
+                <p class="text-xl text-mabon-wheat">
+                    🍎 Bring something small for the gratitude altar if you wish
+                </p>
+                <p class="text-base text-mabon-wheat/70 mt-3">
+                    All welcome • Vegetarian refreshments • Indoor venue
+                </p>
+            </div>
+
+            <!-- Decorative Bottom Border -->
+            <div class="h-4 w-full bg-gradient-to-r from-mabon-deep-red via-mabon-burnt-orange to-mabon-gold"></div>
+
+        </div>
+    </div>
+
+    <!-- Print/Save Controls -->
+    <div class="no-print fixed bottom-6 right-6 flex gap-3">
+        <button onclick="window.print()" class="bg-mabon-forest text-white px-6 py-3 rounded-full shadow-lg hover:bg-mabon-plum transition-colors font-semibold text-sm">
+            🖨️ Print / Save PDF
+        </button>
+    </div>
+</body>
+</html>
