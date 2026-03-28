@@ -1,831 +1,435 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mabon Design System | Autumn Equinox Invitation</title>
+    <title>Mabon Design System | Harvest Landing Page Direction</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Fonts: Cormorant Garamond (Serif for headings) + Nunito Sans (Sans for body) -->
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Nunito+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700;9..144,800&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
     <script>
         tailwind.config = {
             theme: {
                 extend: {
                     fontFamily: {
-                        serif: ['Cormorant Garamond', 'Georgia', 'serif'],
-                        sans: ['Nunito Sans', 'system-ui', 'sans-serif'],
+                        display: ['Fraunces', 'Georgia', 'serif'],
+                        sans: ['Manrope', 'system-ui', 'sans-serif'],
                     },
                     colors: {
-                        // Primary Autumn Palette
                         mabon: {
-                            // Core Colors
-                            'cream': '#F7F3ED',
-                            'gold': '#D4A853',
-                            'burnt-orange': '#C75B39',
-                            'deep-red': '#8B2942',
-                            'plum': '#5C3D5E',
-                            'forest': '#2D4A3E',
-                            'earth': '#6B4423',
-                            'wheat': '#C9B896',
-                            // Shades
-                            'cream-light': '#FDFCFA',
-                            'gold-light': '#E8D5A3',
-                            'orange-light': '#E07B5A',
-                            'red-light': '#A84D62',
-                            'plum-light': '#7A5A78',
-                            'forest-light': '#4A6E5F',
-                            'earth-light': '#8B6B4A',
-                        },
-                        // Semantic Colors
-                        'balance': '#5C3D5E',
-                        'harvest': '#C75B39',
-                        'gratitude': '#D4A853',
-                        'transition': '#2D4A3E',
-                    },
-                    spacing: {
-                        '18': '4.5rem',
-                        '22': '5.5rem',
-                    },
-                    borderRadius: {
-                        'xl': '1rem',
-                        '2xl': '1.25rem',
-                        '3xl': '1.5rem',
+                            ember: '#9F3A16',
+                            copper: '#C85F1D',
+                            saffron: '#E2A126',
+                            parchment: '#F6E7B8',
+                            oat: '#D9CFA3',
+                            moss: '#5D7440',
+                            forest: '#2F4A34',
+                            dusk: '#24323A',
+                            plum: '#6B4867',
+                            cream: '#FBF4E3',
+                        }
                     },
                     boxShadow: {
-                        'warm': '0 4px 20px rgba(139, 41, 66, 0.15)',
-                        'glow': '0 0 30px rgba(212, 168, 83, 0.25)',
-                        'candle': '0 8px 32px rgba(199, 91, 57, 0.2)',
+                        glow: '0 18px 50px rgba(159, 58, 22, 0.18)',
+                        card: '0 10px 30px rgba(36, 50, 58, 0.10)',
+                        inset: 'inset 0 1px 0 rgba(255,255,255,0.35)',
+                    },
+                    borderRadius: {
+                        '4xl': '2rem',
+                    },
+                    backgroundImage: {
+                        'harvest-radial': 'radial-gradient(circle at top, rgba(226,161,38,0.35), transparent 42%)',
+                        'ember-blend': 'linear-gradient(135deg, #9F3A16 0%, #C85F1D 38%, #E2A126 100%)',
+                        'evening-blend': 'linear-gradient(135deg, #24323A 0%, #2F4A34 58%, #5D7440 100%)',
                     }
                 }
             }
         }
     </script>
     <style>
-        /* Custom Typography Styles */
         body {
-            font-family: 'Nunito Sans', sans-serif;
-            background-color: #F7F3ED;
+            font-family: 'Manrope', sans-serif;
+            background:
+                radial-gradient(circle at top left, rgba(226,161,38,0.16), transparent 24%),
+                linear-gradient(180deg, #fbf4e3 0%, #f7edd4 100%);
+            color: #24323A;
         }
 
-        .font-serif {
-            font-family: 'Cormorant Garamond', Georgia, serif;
+        .font-display {
+            font-family: 'Fraunces', Georgia, serif;
         }
 
-        /* Smooth type scale - avoiding jarring jumps */
         .type-display {
-            font-size: clamp(2.5rem, 5vw, 4rem);
-            line-height: 1.1;
-            letter-spacing: -0.02em;
+            font-size: clamp(3rem, 7vw, 5.5rem);
+            line-height: 0.95;
+            letter-spacing: -0.04em;
         }
 
         .type-h1 {
-            font-size: clamp(2rem, 4vw, 3rem);
-            line-height: 1.15;
+            font-size: clamp(2.25rem, 4vw, 3.75rem);
+            line-height: 1;
+            letter-spacing: -0.03em;
         }
 
         .type-h2 {
-            font-size: clamp(1.5rem, 3vw, 2.25rem);
-            line-height: 1.2;
-        }
-
-        .type-h3 {
-            font-size: clamp(1.25rem, 2vw, 1.75rem);
-            line-height: 1.25;
+            font-size: clamp(1.75rem, 3vw, 2.5rem);
+            line-height: 1.08;
+            letter-spacing: -0.02em;
         }
 
         .type-body {
-            font-size: 1rem; /* 16px minimum */
-            line-height: 1.65;
+            font-size: clamp(1rem, 1.1vw, 1.1rem);
+            line-height: 1.7;
         }
 
-        .type-small {
-            font-size: 0.875rem; /* 14px - use sparingly */
-            line-height: 1.5;
-        }
-
-        /* Optimal reading width */
-        .prose {
-            max-width: 65ch;
-        }
-
-        /* Color swatch styles */
-        .swatch {
-            transition: transform 0.2s ease, box-shadow 0.2s ease;
-        }
-
-        .swatch:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
-        }
-
-        /* Gradient backgrounds */
-        .bg-autumn-gradient {
-            background: linear-gradient(135deg, #8B2942 0%, #C75B39 50%, #D4A853 100%);
-        }
-
-        .bg-harvest-gradient {
-            background: linear-gradient(180deg, #F7F3ED 0%, #E8D5A3 100%);
-        }
-
-        .bg-balance-gradient {
-            background: linear-gradient(135deg, #5C3D5E 0%, #2D4A3E 100%);
-        }
-
-        /* Section divider */
-        .divider-leaf {
-            display: inline-block;
-            width: 40px;
-            height: 2px;
-            background: linear-gradient(90deg, transparent, #D4A853, transparent);
-        }
-
-        /* WhatsApp preview frame */
-        .whatsapp-frame {
-            width: 320px;
-            height: 640px;
-            border: 12px solid #1e1e1e;
-            border-radius: 32px;
-            overflow: hidden;
-            position: relative;
-            background: #fff;
-            box-shadow: 0 25px 50px -12px rgba(0,0,0,0.25);
-        }
-
-        .whatsapp-frame::before {
+        .grain::before {
             content: '';
             position: absolute;
-            top: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 120px;
-            height: 24px;
-            background: #1e1e1e;
-            border-radius: 0 0 16px 16px;
-            z-index: 10;
+            inset: 0;
+            pointer-events: none;
+            background-image: radial-gradient(rgba(36, 50, 58, 0.08) 0.7px, transparent 0.7px);
+            background-size: 10px 10px;
+            mix-blend-mode: multiply;
+            opacity: 0.18;
         }
 
-        /* Print/PDF optimization */
+        .swatch,
+        .elevate {
+            transition: transform 0.25s ease, box-shadow 0.25s ease;
+        }
+
+        .swatch:hover,
+        .elevate:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 18px 30px rgba(36, 50, 58, 0.12);
+        }
+
+        .ring-divider {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
+            color: #9F3A16;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            font-size: 0.72rem;
+            font-weight: 800;
+        }
+
+        .ring-divider::before,
+        .ring-divider::after {
+            content: '';
+            width: 2.75rem;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(159,58,22,0.8), transparent);
+        }
+
+        .preview-frame {
+            width: min(100%, 360px);
+            aspect-ratio: 9 / 16;
+            border-radius: 2.25rem;
+            padding: 0.9rem;
+            background: linear-gradient(180deg, #33251f, #1e1a18);
+            box-shadow: 0 28px 80px rgba(36, 50, 58, 0.28);
+        }
+
+        .preview-inner {
+            border-radius: 1.7rem;
+            overflow: hidden;
+            height: 100%;
+            background: linear-gradient(180deg, #F6E7B8 0%, #FBF4E3 100%);
+        }
+
         @media print {
             body {
                 -webkit-print-color-adjust: exact;
                 print-color-adjust: exact;
             }
-
-            .no-print {
-                display: none;
-            }
         }
     </style>
 </head>
-<body class="text-gray-800 antialiased">
-    <!-- Sidebar Navigation -->
-    <aside class="fixed left-0 top-0 w-64 h-screen bg-mabon-forest text-white p-6 overflow-y-auto z-40 hidden lg:block">
-        <div class="mb-10">
-            <div class="flex items-center gap-3 mb-2">
-                <div class="w-10 h-10 rounded-full bg-mabon-gold flex items-center justify-center">
-                    <svg class="w-6 h-6 text-mabon-forest" fill="currentColor" viewBox="0 0 20 20">
-                        <path d="M10 2a8 8 0 100 16 8 8 0 000-16zm0 14a6 6 0 110-12 6 6 0 010 12z"/>
-                        <path d="M10 6a.5.5 0 01.5.5v3h3a.5.5 0 010 1h-3.5a.5.5 0 01-.5-.5v-4z"/>
-                    </svg>
-                </div>
-                <span class="font-serif text-xl font-semibold tracking-wide">Mabon</span>
-            </div>
-            <p class="text-xs text-mabon-wheat opacity-70">Design System v1.0</p>
-        </div>
-
-        <nav class="space-y-1">
-            <a href="#overview" class="block py-2 px-3 rounded-lg hover:bg-white/10 transition-colors text-sm font-medium">
-                Overview
-            </a>
-            <a href="#colors" class="block py-2 px-3 rounded-lg hover:bg-white/10 transition-colors text-sm font-medium">
-                Color Palette
-            </a>
-            <a href="#typography" class="block py-2 px-3 rounded-lg hover:bg-white/10 transition-colors text-sm font-medium">
-                Typography
-            </a>
-            <a href="#whatsapp" class="block py-2 px-3 rounded-lg hover:bg-white/10 transition-colors text-sm font-medium">
-                WhatsApp Preview
-            </a>
-            <a href="#components" class="block py-2 px-3 rounded-lg hover:bg-white/10 transition-colors text-sm font-medium">
-                Components
-            </a>
-            <a href="#invitation" class="block py-2 px-3 rounded-lg hover:bg-white/10 transition-colors text-sm font-medium">
-                Invitation Layout
-            </a>
-        </nav>
-
-        <div class="mt-10 pt-6 border-t border-white/20">
-            <p class="text-xs text-mabon-wheat opacity-60 mb-3">Quick Specs</p>
-            <div class="space-y-2 text-xs text-mabon-wheat">
-                <p>📐 Aspect: 9:16</p>
-                <p>📏 Size: 1080×1920px</p>
-                <p>🎨 Mode: RGB</p>
-            </div>
-        </div>
-    </aside>
-
-    <!-- Main Content -->
-    <main class="lg:ml-64 min-h-screen">
-
-        <!-- Section 1: Overview -->
-        <section id="overview" class="py-16 px-6 lg:px-12 max-w-5xl">
-            <span class="inline-block divider-leaf mb-4"></span>
-            <h1 class="font-serif text-4xl lg:text-5xl text-mabon-forest mb-6">Mabon Design System</h1>
-            <p class="type-body text-gray-600 max-w-2xl mb-8">
-                A comprehensive design system for the Autumn Equinox celebration invitation.
-                Built with warmth, balance, and community in mind—honoring the second harvest
-                and the sacred equilibrium between light and dark.
-            </p>
-
-            <div class="grid md:grid-cols-3 gap-6">
-                <div class="bg-white p-6 rounded-2xl shadow-warm">
-                    <div class="w-12 h-12 bg-mabon-burnt-orange rounded-xl flex items-center justify-center mb-4">
-                        <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"/>
-                        </svg>
-                    </div>
-                    <h3 class="font-serif text-xl text-mabon-forest mb-2">Balance</h3>
-                    <p class="text-sm text-gray-600">The equinox represents perfect equilibrium—honoring both the harvest and the approaching rest.</p>
-                </div>
-
-                <div class="bg-white p-6 rounded-2xl shadow-warm">
-                    <div class="w-12 h-12 bg-mabon-gold rounded-xl flex items-center justify-center mb-4">
-                        <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/>
-                        </svg>
-                    </div>
-                    <h3 class="font-serif text-xl text-mabon-forest mb-2">Gratitude</h3>
-                    <p class="text-sm text-gray-600">A time to give thanks for the abundance of the season and reflect on what we've grown.</p>
-                </div>
-
-                <div class="bg-white p-6 rounded-2xl shadow-warm">
-                    <div class="w-12 h-12 bg-mabon-plum rounded-xl flex items-center justify-center mb-4">
-                        <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/>
-                        </svg>
-                    </div>
-                    <h3 class="font-serif text-xl text-mabon-forest mb-2">Transition</h3>
-                    <p class="text-sm text-gray-600">Standing at the threshold—releasing what no longer serves and welcoming what's next.</p>
+<body class="antialiased">
+    <header class="sticky top-0 z-50 border-b border-mabon-dusk/10 bg-mabon-cream/90 backdrop-blur-xl">
+        <div class="mx-auto flex max-w-7xl items-center justify-between px-5 py-4 lg:px-8">
+            <div class="flex items-center gap-3">
+                <div class="flex h-11 w-11 items-center justify-center rounded-full bg-mabon-ember text-lg text-mabon-cream shadow-glow">☼</div>
+                <div>
+                    <p class="font-display text-xl font-bold text-mabon-dusk">Mabon</p>
+                    <p class="text-xs font-semibold uppercase tracking-[0.28em] text-mabon-forest/70">Harvest design system</p>
                 </div>
             </div>
-        </section>
-
-        <!-- Section 2: Color Palette -->
-        <section id="colors" class="py-16 px-6 lg:px-12 bg-white">
-            <span class="inline-block divider-leaf mb-4"></span>
-            <h2 class="font-serif text-3xl text-mabon-forest mb-8">Color Palette</h2>
-
-            <!-- Primary Colors -->
-            <div class="mb-10">
-                <h3 class="font-semibold text-gray-700 mb-4">Primary Colors</h3>
-                <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-                    <!-- Deep Red -->
-                    <div class="swatch group">
-                        <div class="h-24 rounded-t-2xl bg-mabon-deep-red"></div>
-                        <div class="bg-gray-50 p-4 rounded-b-2xl">
-                            <p class="font-semibold text-gray-800">Deep Red</p>
-                            <p class="text-xs text-gray-500 font-mono mt-1">#8B2942</p>
-                            <p class="text-xs text-gray-400">text-mabon-deep-red</p>
-                        </div>
-                    </div>
-
-                    <!-- Burnt Orange -->
-                    <div class="swatch group">
-                        <div class="h-24 rounded-t-2xl bg-mabon-burnt-orange"></div>
-                        <div class="bg-gray-50 p-4 rounded-b-2xl">
-                            <p class="font-semibold text-gray-800">Burnt Orange</p>
-                            <p class="text-xs text-gray-500 font-mono mt-1">#C75B39</p>
-                            <p class="text-xs text-gray-400">text-mabon-burnt-orange</p>
-                        </div>
-                    </div>
-
-                    <!-- Gold -->
-                    <div class="swatch group">
-                        <div class="h-24 rounded-t-2xl bg-mabon-gold"></div>
-                        <div class="bg-gray-50 p-4 rounded-b-2xl">
-                            <p class="font-semibold text-gray-800">Gold</p>
-                            <p class="text-xs text-gray-500 font-mono mt-1">#D4A853</p>
-                            <p class="text-xs text-gray-400">text-mabon-gold</p>
-                        </div>
-                    </div>
-
-                    <!-- Forest Green -->
-                    <div class="swatch group">
-                        <div class="h-24 rounded-t-2xl bg-mabon-forest"></div>
-                        <div class="bg-gray-50 p-4 rounded-b-2xl">
-                            <p class="font-semibold text-gray-800">Forest</p>
-                            <p class="text-xs text-gray-500 font-mono mt-1">#2D4A3E</p>
-                            <p class="text-xs text-gray-400">text-mabon-forest</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Secondary Colors -->
-            <div class="mb-10">
-                <h3 class="font-semibold text-gray-700 mb-4">Secondary Colors</h3>
-                <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-                    <!-- Plum -->
-                    <div class="swatch group">
-                        <div class="h-24 rounded-t-2xl bg-mabon-plum"></div>
-                        <div class="bg-gray-50 p-4 rounded-b-2xl">
-                            <p class="font-semibold text-gray-800">Plum</p>
-                            <p class="text-xs text-gray-500 font-mono mt-1">#5C3D5E</p>
-                            <p class="text-xs text-gray-400">text-mabon-plum</p>
-                        </div>
-                    </div>
-
-                    <!-- Earth Brown -->
-                    <div class="swatch group">
-                        <div class="h-24 rounded-t-2xl bg-mabon-earth"></div>
-                        <div class="bg-gray-50 p-4 rounded-b-2xl">
-                            <p class="font-semibold text-gray-800">Earth</p>
-                            <p class="text-xs text-gray-500 font-mono mt-1">#6B4423</p>
-                            <p class="text-xs text-gray-400">text-mabon-earth</p>
-                        </div>
-                    </div>
-
-                    <!-- Wheat -->
-                    <div class="swatch group">
-                        <div class="h-24 rounded-t-2xl bg-mabon-wheat"></div>
-                        <div class="bg-gray-50 p-4 rounded-b-2xl">
-                            <p class="font-semibold text-gray-800">Wheat</p>
-                            <p class="text-xs text-gray-500 font-mono mt-1">#C9B896</p>
-                            <p class="text-xs text-gray-400">text-mabon-wheat</p>
-                        </div>
-                    </div>
-
-                    <!-- Cream -->
-                    <div class="swatch group">
-                        <div class="h-24 rounded-t-2xl bg-mabon-cream"></div>
-                        <div class="bg-gray-50 p-4 rounded-b-2xl">
-                            <p class="font-semibold text-gray-800">Cream</p>
-                            <p class="text-xs text-gray-500 font-mono mt-1">#F7F3ED</p>
-                            <p class="text-xs text-gray-400">text-mabon-cream</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Contrast Notes -->
-            <div class="bg-mabon-cream p-6 rounded-2xl">
-                <h4 class="font-semibold text-mabon-forest mb-3">WCAG Contrast Guidelines</h4>
-                <ul class="space-y-2 text-sm text-gray-600">
-                    <li>✓ <strong>Body text:</strong> Use Deep Red (#8B2942), Forest (#2D4A3E), or Earth (#6B4423) on Cream (#F7F3ED) — minimum 4.5:1 ratio</li>
-                    <li>✓ <strong>Large text:</strong> Gold (#D4A853) on Cream achieves 3:1 ratio for headlines</li>
-                    <li>✓ <strong>Buttons:</strong> White text on Deep Red or Forest backgrounds</li>
-                </ul>
-            </div>
-        </section>
-
-        <!-- Section 3: Typography -->
-        <section id="typography" class="py-16 px-6 lg:px-12">
-            <span class="inline-block divider-leaf mb-4"></span>
-            <h2 class="font-serif text-3xl text-mabon-forest mb-8">Typography</h2>
-
-            <!-- Font Selection -->
-            <div class="grid md:grid-cols-2 gap-8 mb-12">
-                <div class="bg-white p-8 rounded-2xl shadow-warm">
-                    <span class="text-xs uppercase tracking-wider text-mabon-burnt-orange font-semibold">Headings</span>
-                    <h3 class="font-serif text-4xl text-mabon-forest mt-2 mb-4">Cormorant Garamond</h3>
-                    <p class="text-gray-600 text-sm mb-4">An elegant serif font with古典的优雅. Perfect for evoking the timeless, mystical nature of the equinox.</p>
-                    <div class="flex gap-2">
-                        <span class="px-2 py-1 bg-gray-100 rounded text-xs">Regular</span>
-                        <span class="px-2 py-1 bg-gray-100 rounded text-xs">Medium</span>
-                        <span class="px-2 py-1 bg-gray-100 rounded text-xs">SemiBold</span>
-                        <span class="px-2 py-1 bg-gray-100 rounded text-xs italic">Italic</span>
-                    </div>
-                </div>
-
-                <div class="bg-white p-8 rounded-2xl shadow-warm">
-                    <span class="text-xs uppercase tracking-wider text-mabon-burnt-orange font-semibold">Body</span>
-                    <h3 class="font-serif text-4xl text-mabon-forest mt-2 mb-4">Nunito Sans</h3>
-                    <p class="text-gray-600 text-sm mb-4">A friendly, rounded sans-serif optimized for readability at 16px+.</p>
-                    <div class="flex gap-2">
-                        <span class="px-2 py-1 bg-gray-100 rounded text-xs">Light</span>
-                        <span class="px-2 py-1 bg-gray-100 rounded text-xs">Regular</span>
-                        <span class="px-2 py-1 bg-gray-100 rounded text-xs">Medium</span>
-                        <span class="px-2 py-1 bg-gray-100 rounded text-xs">Bold</span>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Type Scale -->
-            <div class="bg-white p-8 rounded-2xl shadow-warm mb-12">
-                <h3 class="font-semibold text-gray-700 mb-6">Type Scale</h3>
-                <div class="space-y-6">
-                    <div class="border-b border-gray-100 pb-6">
-                        <p class="text-xs text-gray-400 mb-2">Display / Hero — 48-72px</p>
-                        <p class="font-serif text-5xl text-mabon-forest">Mabon: The Autumn Equinox</p>
-                    </div>
-                    <div class="border-b border-gray-100 pb-6">
-                        <p class="text-xs text-gray-400 mb-2">H1 — 36-48px</p>
-                        <p class="font-serif text-4xl text-mabon-forest">Celebrating the Second Harvest</p>
-                    </div>
-                    <div class="border-b border-gray-100 pb-6">
-                        <p class="text-xs text-gray-400 mb-2">H2 — 30-36px</p>
-                        <p class="font-serif text-3xl text-mabon-forest">Balance & Gratitude</p>
-                    </div>
-                    <div class="border-b border-gray-100 pb-6">
-                        <p class="text-xs text-gray-400 mb-2">H3 — 24-28px</p>
-                        <p class="font-serif text-2xl text-mabon-forest">A Sacred Threshold</p>
-                    </div>
-                    <div class="border-b border-gray-100 pb-6">
-                        <p class="text-xs text-gray-400 mb-2">Body — 16-18px minimum</p>
-                        <p class="text-lg text-gray-700 leading-relaxed max-w-xl">
-                            Join us for an evening of ritual, connection, and gratitude as we honor
-                            the balance of light and dark. Together we'll celebrate the harvest season
-                            and the turning of the wheel.
-                        </p>
-                    </div>
-                    <div>
-                        <p class="text-xs text-gray-400 mb-2">Small / Caption — 14px</p>
-                        <p class="text-sm text-gray-500">Please RSVP by September 20th to confirm attendance.</p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Live Typography Example -->
-            <div class="bg-white p-8 rounded-2xl shadow-warm">
-                <h3 class="font-semibold text-gray-700 mb-6">Live Content Example</h3>
-                <article class="prose max-w-none">
-                    <h1 class="font-serif text-4xl text-mabon-forest mb-4">Welcome to Mabon</h1>
-                    <p class="text-lg text-gray-700 leading-relaxed mb-6">
-                        As the wheel of the year turns, we find ourselves at the <strong>autumnal equinox</strong>—
-                        a moment of perfect balance between light and dark. This is Mabon, the <em>second harvest</em>,
-                        a time to give thanks for what we've grown and <u>release what no longer serves us</u>.
-                    </p>
-                    <h2 class="font-serif text-2xl text-mabon-burnt-orange mb-3">What to Expect</h2>
-                    <p class="text-gray-700 leading-relaxed mb-4">
-                        Our celebration will include:
-                    </p>
-                    <ul class="list-disc pl-6 text-gray-700 space-y-2 mb-6">
-                        <li>A gratitude ritual to honor the season's abundance</li>
-                        <li>Reflection exercises for balancing light and shadow</li>
-                        <li>Seasonal refreshments and community connection</li>
-                        <li>A symbolic "letting go" ceremony</li>
-                    </ul>
-                    <blockquote class="border-l-4 border-mabon-gold pl-6 py-2 my-8 italic text-gray-600">
-                        "The equinox invites you to stand in between two forces—light and shadow,
-                        growth and decay—and find where you belong in that moment."
-                    </blockquote>
-                    <p class="text-gray-700 leading-relaxed">
-                        Come as you are. Bring an item to place on the gratitude altar, and
-                        leave with a heart full of connection. ✨
-                    </p>
-                </article>
-            </div>
-        </section>
-
-        <!-- Section 4: WhatsApp Preview -->
-        <section id="whatsapp" class="py-16 px-6 lg:px-12 bg-mabon-cream">
-            <span class="inline-block divider-leaf mb-4"></span>
-            <h2 class="font-serif text-3xl text-mabon-forest mb-4">WhatsApp Preview</h2>
-            <p class="text-gray-600 mb-8 max-w-xl">
-                The invitation is optimized for WhatsApp sharing—vertical format (9:16),
-                clear hierarchy, and tappable elements where needed.
-            </p>
-
-            <div class="flex flex-col lg:flex-row gap-12 items-start">
-                <!-- Phone Mockup -->
-                <div class="whatsapp-frame flex-shrink-0 mx-auto lg:mx-0">
-                    <div class="h-full w-full bg-gradient-to-b from-mabon-cream to-mabon-gold-light overflow-y-auto">
-                        <!-- Invitation Content Mockup -->
-                        <div class="p-6 pt-10 text-center">
-                            <!-- Decorative top element -->
-                            <div class="flex justify-center mb-4">
-                                <span class="text-2xl">🍂</span>
-                            </div>
-
-                            <!-- Event Title -->
-                            <h1 class="font-serif text-3xl text-mabon-deep-red mb-2">
-                                Mabon
-                            </h1>
-                            <p class="text-sm text-mabon-forest uppercase tracking-widest mb-4">
-                                Autumn Equinox Celebration
-                            </p>
-
-                            <!-- Divider -->
-                            <div class="flex items-center justify-center gap-2 mb-6">
-                                <div class="w-8 h-px bg-mabon-gold"></div>
-                                <span class="text-mabon-gold">⚖</span>
-                                <div class="w-8 h-px bg-mabon-gold"></div>
-                            </div>
-
-                            <!-- Date & Time -->
-                            <div class="bg-white/60 backdrop-blur rounded-xl p-4 mb-4">
-                                <p class="text-2xl font-serif text-mabon-burnt-orange mb-1">September 22, 2026</p>
-                                <p class="text-mabon-forest font-medium">6:00 PM - 9:00 PM</p>
-                            </div>
-
-                            <!-- Location -->
-                            <div class="bg-white/60 backdrop-blur rounded-xl p-4 mb-6">
-                                <p class="font-semibold text-mabon-earth">Beeja Mara Commons</p>
-                                <p class="text-sm text-gray-600">123 Community Lane</p>
-                            </div>
-
-                            <!-- Tagline -->
-                            <p class="text-gray-700 italic text-sm mb-6 px-4">
-                                "A time to give thanks, find balance, and honor the turning of the wheel."
-                            </p>
-
-                            <!-- RSVP Button Visual -->
-                            <div class="inline-block bg-mabon-deep-red text-white px-8 py-3 rounded-full font-semibold shadow-candle">
-                                RSVP Here
-                            </div>
-
-                            <!-- Footer -->
-                            <p class="text-xs text-gray-500 mt-6 mb-4">
-                                Bring something for the gratitude altar 🍎
-                            </p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Specs -->
-                <div class="flex-1">
-                    <h3 class="font-semibold text-mabon-forest mb-4">Technical Specifications</h3>
-                    <div class="bg-white rounded-2xl p-6 shadow-warm">
-                        <table class="w-full text-sm">
-                            <tbody class="divide-y divide-gray-100">
-                                <tr>
-                                    <td class="py-3 text-gray-500">Aspect Ratio</td>
-                                    <td class="py-3 font-medium text-right">9:16 (Portrait)</td>
-                                </tr>
-                                <tr>
-                                    <td class="py-3 text-gray-500">Recommended Size</td>
-                                    <td class="py-3 font-medium text-right">1080 × 1920px</td>
-                                </tr>
-                                <tr>
-                                    <td class="py-3 text-gray-500">Format</td>
-                                    <td class="py-3 font-medium text-right">PNG or JPEG</td>
-                                </tr>
-                                <tr>
-                                    <td class="py-3 text-gray-500">Color Mode</td>
-                                    <td class="py-3 font-medium text-right">RGB</td>
-                                </tr>
-                                <tr>
-                                    <td class="py-3 text-gray-500">File Size</td>
-                                    <td class="py-3 font-medium text-right">< 500KB (for fast sharing)</td>
-                                </tr>
-                                <tr>
-                                    <td class="py-3 text-gray-500">Safe Margins</td>
-                                    <td class="py-3 font-medium text-right">40px all sides</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-
-                    <h3 class="font-semibold text-mabon-forest mb-4 mt-8">Layout Zones</h3>
-                    <div class="bg-white rounded-2xl p-6 shadow-warm">
-                        <div class="space-y-3 text-sm">
-                            <div class="flex gap-3">
-                                <span class="w-4 h-4 rounded bg-mabon-burnt-orange flex-shrink-0 mt-0.5"></span>
-                                <div>
-                                    <p class="font-medium">Hero (Top 40%)</p>
-                                    <p class="text-gray-500">Event name, key visual, date/time</p>
-                                </div>
-                            </div>
-                            <div class="flex gap-3">
-                                <span class="w-4 h-4 rounded bg-mabon-gold flex-shrink-0 mt-0.5"></span>
-                                <div>
-                                    <p class="font-medium">Details (Middle 35%)</p>
-                                    <p class="text-gray-500">Location, description, what to bring</p>
-                                </div>
-                            </div>
-                            <div class="flex gap-3">
-                                <span class="w-4 h-4 rounded bg-mabon-forest flex-shrink-0 mt-0.5"></span>
-                                <div>
-                                    <p class="font-medium">CTA (Bottom 25%)</p>
-                                    <p class="text-gray-500">RSVP button, contact info</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Section 5: Components -->
-        <section id="components" class="py-16 px-6 lg:px-12 bg-white">
-            <span class="inline-block divider-leaf mb-4"></span>
-            <h2 class="font-serif text-3xl text-mabon-forest mb-8">Components</h2>
-
-            <!-- Buttons -->
-            <div class="mb-12">
-                <h3 class="font-semibold text-gray-700 mb-4">Buttons</h3>
-                <div class="flex flex-wrap gap-4">
-                    <button class="px-8 py-3 bg-mabon-deep-red text-white font-semibold rounded-full shadow-candle hover:bg-mabon-red-light transition-all">
-                        RSVP Now
-                    </button>
-                    <button class="px-8 py-3 border-2 border-mabon-forest text-mabon-forest font-semibold rounded-full hover:bg-mabon-forest hover:text-white transition-all">
-                        Learn More
-                    </button>
-                    <button class="px-8 py-3 text-mabon-burnt-orange font-semibold hover:underline">
-                        Contact Organizer →
-                    </button>
-                    <button class="px-8 py-3 bg-gray-200 text-gray-400 font-semibold rounded-full cursor-not-allowed" disabled>
-                        Full (Waitlist)
-                    </button>
-                </div>
-            </div>
-
-            <!-- Cards -->
-            <div class="mb-12">
-                <h3 class="font-semibold text-gray-700 mb-4">Cards</h3>
-                <div class="grid md:grid-cols-3 gap-6">
-                    <div class="bg-mabon-cream rounded-2xl p-6 shadow-warm">
-                        <div class="text-3xl mb-3">⚖️</div>
-                        <h4 class="font-serif text-xl text-mabon-forest mb-2">Balance Ritual</h4>
-                        <p class="text-gray-600 text-sm">Honor the equilibrium of light and dark through guided reflection.</p>
-                    </div>
-                    <div class="bg-mabon-cream rounded-2xl p-6 shadow-warm">
-                        <div class="text-3xl mb-3">🍎</div>
-                        <h4 class="font-serif text-xl text-mabon-forest mb-2">Harvest Feast</h4>
-                        <p class="text-gray-600 text-sm">Seasonal refreshments and gratitude sharing circle.</p>
-                    </div>
-                    <div class="bg-mabon-cream rounded-2xl p-6 shadow-warm">
-                        <div class="text-3xl mb-3">🕯️</div>
-                        <h4 class="font-serif text-xl text-mabon-forest mb-2">Letting Go</h4>
-                        <p class="text-gray-600 text-sm">A candle ceremony to release what no longer serves you.</p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Badges -->
-            <div class="mb-12">
-                <h3 class="font-semibold text-gray-700 mb-4">Badges & Tags</h3>
-                <div class="flex flex-wrap gap-3">
-                    <span class="px-3 py-1 bg-mabon-gold/20 text-mabon-earth rounded-full text-sm font-medium">Free Event</span>
-                    <span class="px-3 py-1 bg-mabon-forest/10 text-mabon-forest rounded-full text-sm font-medium">All Welcome</span>
-                    <span class="px-3 py-1 bg-mabon-burnt-orange/10 text-mabon-burnt-orange rounded-full text-sm font-medium">Vegetarian</span>
-                    <span class="px-3 py-1 bg-mabon-plum/10 text-mabon-plum rounded-full text-sm font-medium">Indoors</span>
-                </div>
-            </div>
-
-            <!-- Icons -->
-            <div>
-                <h3 class="font-semibold text-gray-700 mb-4">Iconography Style</h3>
-                <div class="bg-mabon-cream rounded-2xl p-6">
-                    <p class="text-sm text-gray-600 mb-4">Use warm, organic iconography with 1.5px stroke weight. Preferred sources:</p>
-                    <div class="grid grid-cols-4 md:grid-cols-8 gap-4 text-center">
-                        <div class="p-3 bg-white rounded-xl">
-                            <span class="text-2xl">🍂</span>
-                            <p class="text-xs text-gray-500 mt-1">Leaves</p>
-                        </div>
-                        <div class="p-3 bg-white rounded-xl">
-                            <span class="text-2xl">⚖️</span>
-                            <p class="text-xs text-gray-500 mt-1">Scale</p>
-                        </div>
-                        <div class="p-3 bg-white rounded-xl">
-                            <span class="text-2xl">🕯️</span>
-                            <p class="text-xs text-gray-500 mt-1">Candle</p>
-                        </div>
-                        <div class="p-3 bg-white rounded-xl">
-                            <span class="text-2xl">🍎</span>
-                            <p class="text-xs text-gray-500 mt-1">Apple</p>
-                        </div>
-                        <div class="p-3 bg-white rounded-xl">
-                            <span class="text-2xl">🌾</span>
-                            <p class="text-xs text-gray-500 mt-1">Wheat</p>
-                        </div>
-                        <div class="p-3 bg-white rounded-xl">
-                            <span class="text-2xl">🌙</span>
-                            <p class="text-xs text-gray-500 mt-1">Moon</p>
-                        </div>
-                        <div class="p-3 bg-white rounded-xl">
-                            <span class="text-2xl">☀️</span>
-                            <p class="text-xs text-gray-500 mt-1">Sun</p>
-                        </div>
-                        <div class="p-3 bg-white rounded-xl">
-                            <span class="text-2xl">🪶</span>
-                            <p class="text-xs text-gray-500 mt-1">Feather</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Section 6: Invitation Layout -->
-        <section id="invitation" class="py-16 px-6 lg:px-12 bg-gradient-to-b from-mabon-cream to-mabon-gold-light">
-            <span class="inline-block divider-leaf mb-4"></span>
-            <h2 class="font-serif text-3xl text-mabon-forest mb-8">Invitation Layout</h2>
-
-            <div class="bg-white rounded-3xl shadow-warm overflow-hidden max-w-2xl mx-auto">
-                <!-- Header Banner -->
-                <div class="bg-autumn-gradient p-8 text-center">
-                    <div class="flex justify-center gap-2 mb-4">
-                        <span class="text-2xl">🍂</span>
-                        <span class="text-2xl">⚖</span>
-                        <span class="text-2xl">🌙</span>
-                    </div>
-                    <h1 class="font-serif text-4xl text-white mb-2">Mabon</h1>
-                    <p class="text-mabon-cream uppercase tracking-widest text-sm">The Autumn Equinox</p>
-                </div>
-
-                <!-- Main Content -->
-                <div class="p-8">
-                    <!-- Date & Time Card -->
-                    <div class="bg-mabon-cream rounded-2xl p-6 mb-6 text-center">
-                        <div class="flex items-center justify-center gap-2 mb-2">
-                            <svg class="w-5 h-5 text-mabon-burnt-orange" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
-                            </svg>
-                            <span class="text-mabon-burnt-orange font-semibold">Sunday, September 22, 2026</span>
-                        </div>
-                        <div class="flex items-center justify-center gap-2">
-                            <svg class="w-5 h-5 text-mabon-forest" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
-                            </svg>
-                            <span class="text-mabon-forest font-medium">6:00 PM — 9:00 PM</span>
-                        </div>
-                    </div>
-
-                    <!-- Location -->
-                    <div class="text-center mb-6">
-                        <p class="text-gray-500 text-sm uppercase tracking-wider mb-1">Location</p>
-                        <p class="font-serif text-2xl text-mabon-earth">Beeja Mara Commons</p>
-                        <p class="text-gray-600">123 Community Lane, Johannesburg</p>
-                    </div>
-
-                    <!-- Divider -->
-                    <div class="flex items-center justify-center gap-4 mb-6">
-                        <div class="w-12 h-px bg-mabon-gold"></div>
-                        <span class="text-mabon-gold text-xl">✦</span>
-                        <div class="w-12 h-px bg-mabon-gold"></div>
-                    </div>
-
-                    <!-- Description -->
-                    <p class="text-gray-700 text-center leading-relaxed mb-6">
-                        Join us for an evening of <strong>ritual, reflection, and community</strong>
-                        as we honor the autumnal equinox—the perfect balance of light and dark.
-                        Together we'll give thanks for the harvest and prepare for the quiet
-                        wisdom of winter.
-                    </p>
-
-                    <!-- What to Expect -->
-                    <div class="bg-mabon-cream rounded-2xl p-5 mb-6">
-                        <p class="text-center font-semibold text-mabon-forest mb-3">What to Expect</p>
-                        <ul class="text-sm text-gray-600 space-y-2">
-                            <li class="flex items-center gap-2">
-                                <span class="text-mabon-burnt-orange">✦</span>
-                                Gratitude ritual & sharing circle
-                            </li>
-                            <li class="flex items-center gap-2">
-                                <span class="text-mabon-burnt-orange">✦</span>
-                                Balance meditation
-                            </li>
-                            <li class="flex items-center gap-2">
-                                <span class="text-mabon-burnt-orange">✦</span>
-                                Seasonal refreshments
-                            </li>
-                            <li class="flex items-center gap-2">
-                                <span class="text-mabon-burnt-orange">✦</span>
-                                Letting go candle ceremony
-                            </li>
-                        </ul>
-                    </div>
-
-                    <!-- CTA -->
-                    <div class="text-center">
-                        <button class="px-10 py-4 bg-mabon-deep-red text-white font-semibold rounded-full shadow-candle hover:bg-mabon-red-light transition-all mb-3">
-                            RSVP to Attend
-                        </button>
-                        <p class="text-xs text-gray-500">
-                            Please respond by September 20th<br>
-                            Questions? Message us
-                        </p>
-                    </div>
-                </div>
-
-                <!-- Footer -->
-                <div class="bg-mabon-forest p-4 text-center">
-                    <p class="text-mabon-wheat text-sm">
-                        🍎 Bring something small for the gratitude altar if you wish
-                    </p>
-                </div>
-            </div>
-
-            <p class="text-center text-gray-500 text-sm mt-8">
-                Export this layout as 1080×1920px PNG for WhatsApp sharing
-            </p>
-        </section>
-
-    </main>
-
-    <!-- Mobile Header (visible on mobile) -->
-    <header class="lg:hidden bg-mabon-forest text-white p-4 sticky top-0 z-50">
-        <div class="flex items-center justify-between">
-            <div class="flex items-center gap-2">
-                <div class="w-8 h-8 bg-mabon-gold rounded-full flex items-center justify-center">
-                    <span class="text-mabon-forest text-sm">⚖</span>
-                </div>
-                <span class="font-serif font-semibold">Mabon</span>
-            </div>
-            <span class="text-xs text-mabon-wheat">Design System</span>
+            <nav class="hidden items-center gap-2 lg:flex">
+                <a href="#overview" class="rounded-full px-4 py-2 text-sm font-semibold text-mabon-dusk transition hover:bg-mabon-parchment">Overview</a>
+                <a href="#palette" class="rounded-full px-4 py-2 text-sm font-semibold text-mabon-dusk transition hover:bg-mabon-parchment">Palette</a>
+                <a href="#type" class="rounded-full px-4 py-2 text-sm font-semibold text-mabon-dusk transition hover:bg-mabon-parchment">Typography</a>
+                <a href="#components" class="rounded-full px-4 py-2 text-sm font-semibold text-mabon-dusk transition hover:bg-mabon-parchment">Components</a>
+                <a href="#preview" class="rounded-full bg-mabon-dusk px-4 py-2 text-sm font-semibold text-white transition hover:bg-mabon-forest">Preview</a>
+            </nav>
         </div>
     </header>
 
+    <main>
+        <section id="overview" class="relative overflow-hidden grain">
+            <div class="mx-auto grid max-w-7xl gap-12 px-5 py-16 lg:grid-cols-[1.1fr_0.9fr] lg:px-8 lg:py-20">
+                <div class="relative z-10">
+                    <span class="ring-divider mb-5">Visual direction</span>
+                    <h1 class="font-display type-display max-w-3xl text-mabon-dusk">More sun-fire, more harvest glow, more presence.</h1>
+                    <p class="mt-6 max-w-2xl type-body text-mabon-dusk/78">
+                        The previous system felt muted and delicate. The artwork in <strong>Mabon/assets</strong> suggests something richer: ochre light, ember reds, moss greens, strong symbolic forms, and bold contrast between day and night. This refreshed direction leans into abundance rather than restraint.
+                    </p>
+                    <div class="mt-8 grid gap-4 sm:grid-cols-3">
+                        <div class="rounded-3xl border border-mabon-oat/60 bg-white/70 p-5 shadow-card backdrop-blur elevate">
+                            <p class="text-sm font-extrabold uppercase tracking-[0.18em] text-mabon-ember">Mood</p>
+                            <p class="mt-2 font-display text-2xl text-mabon-dusk">Radiant abundance</p>
+                            <p class="mt-2 text-sm leading-6 text-mabon-dusk/72">Golden, ceremonial, communal, grounded in the second harvest.</p>
+                        </div>
+                        <div class="rounded-3xl border border-mabon-oat/60 bg-white/70 p-5 shadow-card backdrop-blur elevate">
+                            <p class="text-sm font-extrabold uppercase tracking-[0.18em] text-mabon-ember">Shape language</p>
+                            <p class="mt-2 font-display text-2xl text-mabon-dusk">Rounded + iconic</p>
+                            <p class="mt-2 text-sm leading-6 text-mabon-dusk/72">Large curves, medallions, framed cards, bold icon silhouettes.</p>
+                        </div>
+                        <div class="rounded-3xl border border-mabon-oat/60 bg-white/70 p-5 shadow-card backdrop-blur elevate">
+                            <p class="text-sm font-extrabold uppercase tracking-[0.18em] text-mabon-ember">Typography</p>
+                            <p class="mt-2 font-display text-2xl text-mabon-dusk">Confident and warm</p>
+                            <p class="mt-2 text-sm leading-6 text-mabon-dusk/72">Fraunces for sculptural headlines, Manrope for clear modern body copy.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="relative z-10 rounded-[2rem] border border-mabon-oat/60 bg-white/65 p-5 shadow-glow backdrop-blur">
+                    <div class="grid gap-4 sm:grid-cols-2">
+                        <div class="overflow-hidden rounded-[1.75rem] border border-mabon-oat/50 bg-mabon-parchment">
+                            <img src="assets/EquinoxBalance.webp" alt="Mabon balance illustration" class="aspect-square w-full object-cover">
+                        </div>
+                        <div class="overflow-hidden rounded-[1.75rem] border border-mabon-oat/50 bg-mabon-parchment">
+                            <img src="assets/EquinoxRitual.webp" alt="Mabon ritual gathering illustration" class="aspect-square w-full object-cover">
+                        </div>
+                        <div class="sm:col-span-2 rounded-[1.75rem] bg-ember-blend p-6 text-mabon-cream shadow-inset">
+                            <p class="text-sm font-extrabold uppercase tracking-[0.24em] text-white/75">Key shift</p>
+                            <p class="mt-3 font-display text-3xl">Use the image palette as the interface palette.</p>
+                            <p class="mt-3 text-sm leading-6 text-white/80">The interface should feel like it emerged from the illustrations rather than sitting beside them. Ochre, ember, moss, parchment, and dusk should do the heavy lifting.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="palette" class="bg-white/70 px-5 py-16 lg:px-8">
+            <div class="mx-auto max-w-7xl">
+                <span class="ring-divider mb-5">Palette</span>
+                <div class="mb-10 flex flex-col gap-4 lg:flex-row lg:items-end lg:justify-between">
+                    <div>
+                        <h2 class="font-display type-h1 text-mabon-dusk">A palette pulled from candlelight, soil, fruit, and late sun.</h2>
+                        <p class="mt-4 max-w-2xl type-body text-mabon-dusk/72">The strongest notes from the artwork are warm yellow light, rusted orange, rich bark, and calming field greens. Cream stays present, but only as a luminous base rather than the dominant mood.</p>
+                    </div>
+                    <div class="rounded-full bg-mabon-dusk px-5 py-3 text-sm font-bold uppercase tracking-[0.24em] text-mabon-cream">Higher contrast by default</div>
+                </div>
+
+                <div class="grid gap-5 md:grid-cols-2 xl:grid-cols-5">
+                    <div class="swatch overflow-hidden rounded-[1.75rem] border border-mabon-oat/60 bg-white shadow-card">
+                        <div class="h-32 bg-mabon-ember"></div>
+                        <div class="p-5">
+                            <p class="font-display text-2xl text-mabon-dusk">Ember</p>
+                            <p class="mt-1 font-mono text-xs text-mabon-dusk/60">#9F3A16</p>
+                            <p class="mt-3 text-sm leading-6 text-mabon-dusk/72">Primary action color, decorative emphasis, harvest warmth.</p>
+                        </div>
+                    </div>
+                    <div class="swatch overflow-hidden rounded-[1.75rem] border border-mabon-oat/60 bg-white shadow-card">
+                        <div class="h-32 bg-mabon-copper"></div>
+                        <div class="p-5">
+                            <p class="font-display text-2xl text-mabon-dusk">Copper</p>
+                            <p class="mt-1 font-mono text-xs text-mabon-dusk/60">#C85F1D</p>
+                            <p class="mt-3 text-sm leading-6 text-mabon-dusk/72">Secondary accent for labels, icon fills, and warm overlays.</p>
+                        </div>
+                    </div>
+                    <div class="swatch overflow-hidden rounded-[1.75rem] border border-mabon-oat/60 bg-white shadow-card">
+                        <div class="h-32 bg-mabon-saffron"></div>
+                        <div class="p-5">
+                            <p class="font-display text-2xl text-mabon-dusk">Saffron</p>
+                            <p class="mt-1 font-mono text-xs text-mabon-dusk/60">#E2A126</p>
+                            <p class="mt-3 text-sm leading-6 text-mabon-dusk/72">Glow color for highlights, separators, and celebratory detail.</p>
+                        </div>
+                    </div>
+                    <div class="swatch overflow-hidden rounded-[1.75rem] border border-mabon-oat/60 bg-white shadow-card">
+                        <div class="h-32 bg-mabon-moss"></div>
+                        <div class="p-5">
+                            <p class="font-display text-2xl text-mabon-dusk">Moss</p>
+                            <p class="mt-1 font-mono text-xs text-mabon-dusk/60">#5D7440</p>
+                            <p class="mt-3 text-sm leading-6 text-mabon-dusk/72">Grounding support tone that keeps the page connected to land.</p>
+                        </div>
+                    </div>
+                    <div class="swatch overflow-hidden rounded-[1.75rem] border border-mabon-oat/60 bg-white shadow-card">
+                        <div class="h-32 bg-mabon-dusk"></div>
+                        <div class="p-5">
+                            <p class="font-display text-2xl text-mabon-dusk">Dusk</p>
+                            <p class="mt-1 font-mono text-xs text-mabon-dusk/60">#24323A</p>
+                            <p class="mt-3 text-sm leading-6 text-mabon-dusk/72">Primary text and dark section background for stable contrast.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mt-8 grid gap-6 lg:grid-cols-[1.2fr_0.8fr]">
+                    <div class="rounded-[2rem] bg-mabon-cream p-8 shadow-card">
+                        <h3 class="text-sm font-extrabold uppercase tracking-[0.2em] text-mabon-ember">Application rules</h3>
+                        <ul class="mt-4 space-y-3 text-sm leading-7 text-mabon-dusk/76">
+                            <li><strong>Backgrounds:</strong> mix parchment and cream with occasional dusk sections for rhythm.</li>
+                            <li><strong>CTAs:</strong> use ember or dusk with cream text; avoid pale low-energy buttons.</li>
+                            <li><strong>Highlights:</strong> saffron should feel like sunlight touching the layout, not a base wash.</li>
+                            <li><strong>Cards:</strong> keep surfaces warm and tangible with subtle borders and layered shadows.</li>
+                        </ul>
+                    </div>
+                    <div class="rounded-[2rem] bg-evening-blend p-8 text-mabon-cream shadow-card">
+                        <h3 class="text-sm font-extrabold uppercase tracking-[0.2em] text-white/70">Contrast note</h3>
+                        <p class="mt-4 text-sm leading-7 text-white/80">Body copy should sit in dusk or forest tones on cream-based surfaces. Saffron works best as a supporting glow and headline accent, not for paragraph text.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="type" class="px-5 py-16 lg:px-8">
+            <div class="mx-auto max-w-7xl">
+                <span class="ring-divider mb-5">Typography</span>
+                <div class="grid gap-8 lg:grid-cols-[0.95fr_1.05fr]">
+                    <div class="rounded-[2rem] bg-mabon-dusk p-8 text-mabon-cream shadow-card">
+                        <p class="text-sm font-extrabold uppercase tracking-[0.24em] text-white/65">Headline system</p>
+                        <h2 class="font-display type-display mt-5 text-white">Fraunces</h2>
+                        <p class="mt-5 max-w-lg type-body text-white/78">The previous serif felt too fragile for the visual world. Fraunces has weight, sculptural terminals, and enough personality to hold a vibrant hero without becoming ornamental noise.</p>
+                        <div class="mt-8 space-y-4 border-t border-white/10 pt-6">
+                            <p class="font-display text-5xl text-mabon-saffron">Second Harvest</p>
+                            <p class="font-display text-4xl text-white">Equinox as threshold</p>
+                            <p class="font-display text-3xl text-white/80">Gathering with warmth and intention</p>
+                        </div>
+                    </div>
+                    <div class="rounded-[2rem] border border-mabon-oat/60 bg-white/75 p-8 shadow-card backdrop-blur">
+                        <p class="text-sm font-extrabold uppercase tracking-[0.24em] text-mabon-ember">Body system</p>
+                        <h2 class="mt-4 text-4xl font-extrabold tracking-tight text-mabon-dusk">Manrope</h2>
+                        <p class="mt-5 type-body text-mabon-dusk/76">Manrope gives the page a cleaner, more contemporary backbone. It reads clearly at small sizes, pairs well with a characterful display face, and keeps the interface strong rather than wispy.</p>
+                        <div class="mt-8 space-y-5">
+                            <div class="rounded-3xl bg-mabon-parchment p-5">
+                                <p class="text-xs font-extrabold uppercase tracking-[0.24em] text-mabon-ember">Display</p>
+                                <p class="font-display mt-2 text-5xl text-mabon-dusk">Mabon</p>
+                            </div>
+                            <div class="rounded-3xl bg-mabon-cream p-5">
+                                <p class="text-xs font-extrabold uppercase tracking-[0.24em] text-mabon-ember">Body copy</p>
+                                <p class="mt-2 text-base leading-7 text-mabon-dusk/80">A market shaped by harvest, local makers, and a felt relationship with land, season, and community.</p>
+                            </div>
+                            <div class="rounded-3xl bg-mabon-cream p-5">
+                                <p class="text-xs font-extrabold uppercase tracking-[0.24em] text-mabon-ember">Caption / metadata</p>
+                                <p class="mt-2 text-sm font-semibold uppercase tracking-[0.2em] text-mabon-forest/70">Sunday 5 April · 11am—4pm</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="components" class="bg-white/70 px-5 py-16 lg:px-8">
+            <div class="mx-auto max-w-7xl">
+                <span class="ring-divider mb-5">Components</span>
+                <div class="mb-10 flex flex-col gap-4 lg:flex-row lg:items-end lg:justify-between">
+                    <div>
+                        <h2 class="font-display type-h1 text-mabon-dusk">Component language for the rebuilt landing page.</h2>
+                        <p class="mt-4 max-w-2xl type-body text-mabon-dusk/74">Components should feel ceremonial and tactile: pill labels, bold action buttons, framed image cards, and information blocks that read like invitations rather than corporate sections.</p>
+                    </div>
+                </div>
+
+                <div class="grid gap-6 lg:grid-cols-3">
+                    <div class="rounded-[2rem] bg-mabon-cream p-6 shadow-card elevate">
+                        <p class="text-xs font-extrabold uppercase tracking-[0.24em] text-mabon-ember">Primary CTA</p>
+                        <button class="mt-5 rounded-full bg-mabon-ember px-7 py-4 text-sm font-extrabold uppercase tracking-[0.18em] text-mabon-cream shadow-glow">Reserve your place</button>
+                        <p class="mt-4 text-sm leading-6 text-mabon-dusk/70">High-contrast, warm, and substantial. Use sparingly so it keeps ceremonial weight.</p>
+                    </div>
+                    <div class="rounded-[2rem] bg-mabon-dusk p-6 text-mabon-cream shadow-card elevate">
+                        <p class="text-xs font-extrabold uppercase tracking-[0.24em] text-white/65">Feature card</p>
+                        <h3 class="font-display mt-5 text-3xl text-white">Local abundance</h3>
+                        <p class="mt-3 text-sm leading-6 text-white/78">Use dark grounds to intensify the gold and copper accents and create visual pacing.</p>
+                        <div class="mt-5 inline-flex rounded-full bg-white/10 px-4 py-2 text-xs font-bold uppercase tracking-[0.2em] text-mabon-saffron">Community-led</div>
+                    </div>
+                    <div class="rounded-[2rem] border border-mabon-oat/60 bg-white p-6 shadow-card elevate">
+                        <p class="text-xs font-extrabold uppercase tracking-[0.24em] text-mabon-ember">Info row</p>
+                        <div class="mt-5 flex items-start gap-4">
+                            <div class="flex h-12 w-12 items-center justify-center rounded-2xl bg-mabon-saffron/20 text-xl text-mabon-ember">✦</div>
+                            <div>
+                                <p class="text-sm font-extrabold uppercase tracking-[0.18em] text-mabon-forest/70">What to expect</p>
+                                <p class="mt-1 font-display text-2xl text-mabon-dusk">Makers, food, music, firelight</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mt-8 grid gap-6 lg:grid-cols-2">
+                    <div class="overflow-hidden rounded-[2rem] border border-mabon-oat/60 bg-white shadow-card">
+                        <img src="assets/MabonOstara.webp" alt="Mabon and Ostara contrast illustration" class="h-72 w-full object-cover">
+                        <div class="p-6">
+                            <p class="text-xs font-extrabold uppercase tracking-[0.24em] text-mabon-ember">Image treatment</p>
+                            <p class="mt-3 text-sm leading-7 text-mabon-dusk/74">Use fewer images, but let them land with purpose. Prefer large framed illustrations integrated into sections over disposable thumbnail strips.</p>
+                        </div>
+                    </div>
+                    <div class="rounded-[2rem] bg-mabon-parchment p-6 shadow-card">
+                        <p class="text-xs font-extrabold uppercase tracking-[0.24em] text-mabon-ember">Copy guidance</p>
+                        <ul class="mt-4 space-y-3 text-sm leading-7 text-mabon-dusk/76">
+                            <li><strong>Lead with invitation:</strong> name the gathering before explaining the cosmology.</li>
+                            <li><strong>Stay grounded:</strong> local makers, harvest, music, food, and community should be tangible.</li>
+                            <li><strong>Use mythic tone lightly:</strong> keep it warm and evocative, not overly mystical or abstract.</li>
+                            <li><strong>Avoid future-year framing:</strong> remove references to 2027 until there is an actual programme to show.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="preview" class="px-5 py-16 lg:px-8">
+            <div class="mx-auto grid max-w-7xl gap-8 lg:grid-cols-[0.85fr_1.15fr] lg:items-center">
+                <div>
+                    <span class="ring-divider mb-5">Preview</span>
+                    <h2 class="font-display type-h1 text-mabon-dusk">Mobile-first invitation energy without the fragility.</h2>
+                    <p class="mt-4 max-w-xl type-body text-mabon-dusk/74">The WhatsApp-style preview now carries stronger typography, a warmer gradient structure, and clearer information hierarchy. It feels celebratory and useful, while staying visually rooted in the artwork.</p>
+                    <div class="mt-8 grid gap-4 sm:grid-cols-2">
+                        <div class="rounded-3xl bg-white p-5 shadow-card">
+                            <p class="text-xs font-extrabold uppercase tracking-[0.24em] text-mabon-ember">Do</p>
+                            <p class="mt-2 text-sm leading-6 text-mabon-dusk/74">Lead with image, date, and invitation. Keep the path to RSVP obvious.</p>
+                        </div>
+                        <div class="rounded-3xl bg-white p-5 shadow-card">
+                            <p class="text-xs font-extrabold uppercase tracking-[0.24em] text-mabon-ember">Avoid</p>
+                            <p class="mt-2 text-sm leading-6 text-mabon-dusk/74">Tiny labels, weak pastel buttons, and image carousels that create horizontal scrolling.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mx-auto preview-frame">
+                    <div class="preview-inner relative flex h-full flex-col overflow-hidden">
+                        <img src="assets/EquinoxRitual.webp" alt="Mabon ritual gathering artwork" class="h-[42%] w-full object-cover">
+                        <div class="absolute inset-x-0 top-[32%] mx-auto w-[88%] rounded-[1.7rem] bg-mabon-cream/86 p-5 shadow-glow backdrop-blur">
+                            <p class="text-center text-xs font-extrabold uppercase tracking-[0.28em] text-mabon-ember">Mabon mystery market</p>
+                            <h3 class="font-display mt-3 text-center text-4xl leading-none text-mabon-dusk">Second harvest glow</h3>
+                            <p class="mt-3 text-center text-sm leading-6 text-mabon-dusk/72">A vibrant invitation to gather around local food, music, ritual, and seasonal abundance.</p>
+                        </div>
+                        <div class="flex flex-1 flex-col justify-end bg-gradient-to-b from-transparent to-mabon-parchment px-5 pb-5 pt-24">
+                            <div class="space-y-3 rounded-[1.6rem] bg-white/75 p-5 shadow-card backdrop-blur">
+                                <div class="flex items-start gap-3">
+                                    <div class="flex h-10 w-10 items-center justify-center rounded-2xl bg-mabon-saffron/20 text-mabon-ember">☼</div>
+                                    <div>
+                                        <p class="text-xs font-extrabold uppercase tracking-[0.2em] text-mabon-forest/65">When</p>
+                                        <p class="font-display text-2xl text-mabon-dusk">Sunday 5 April</p>
+                                        <p class="text-sm text-mabon-dusk/70">11am—4pm</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-start gap-3">
+                                    <div class="flex h-10 w-10 items-center justify-center rounded-2xl bg-mabon-moss/15 text-mabon-forest">✦</div>
+                                    <div>
+                                        <p class="text-xs font-extrabold uppercase tracking-[0.2em] text-mabon-forest/65">Where</p>
+                                        <p class="font-display text-xl text-mabon-dusk">Pure Mountain Farm</p>
+                                        <p class="text-sm text-mabon-dusk/70">Beeja Mara · 4 Tor Doone Lane</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="mt-4 rounded-full bg-mabon-ember px-5 py-4 text-center text-sm font-extrabold uppercase tracking-[0.18em] text-mabon-cream shadow-glow">Explore the gathering</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
 </body>
 </html>
