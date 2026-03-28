@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Autumn Equinox | Community Harvest Gathering</title>
+
+  <!-- Google Fonts: Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- GSAP & ScrollTrigger -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+
+  <!-- Tailwind Configuration (Design System Palette) -->
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+          },
+          colors: {
+            theme: {
+              parchment: '#F4EFE6', // Soft background
+              leaf: '#2A3A29',      // Deep green text
+              terracotta: '#B3542B', // Accent burnt orange
+              gold: '#D49A36',       // Accent mustard yellow
+              earth: '#5C4A3D'       // Soft brown
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <style type="text/tailwindcss">
+    @layer utilities {
+      /* Reusable utility classes for the AstroJS migration */
+      .text-balance-custom {
+        text-wrap: balance;
+      }
+      .icon-wrapper {
+        @apply flex items-center justify-center w-10 h-10 rounded-full bg-theme-leaf/10 text-theme-terracotta;
+      }
+    }
+  </style>
+</head>
+<body class="bg-[#1A1A1A] text-theme-leaf antialiased flex justify-center items-center min-h-screen py-8">
+
+  <!-- Main Container: Mobile Proportions (9:16 approx) for easy WhatsApp PDF/Image Export -->
+  <main id="invite-container" class="w-full max-w-[420px] bg-theme-parchment shadow-2xl overflow-hidden relative" role="main">
+
+    <!-- Hero Section -->
+    <header class="relative w-full aspect-[4/3] bg-theme-leaf flex items-center justify-center overflow-hidden">
+      <!--
+        Image 1: The community gathering.
+        Ensure your actual file is located at assets/community-gathering.jpg
+      -->
+      <img
+        src="assets/community-gathering.jpg"
+        alt="Illustration of a diverse community gathering in nature, holding candles and harvest symbols"
+        class="absolute inset-0 w-full h-full object-cover opacity-90"
+        onerror="this.src='https://placehold.co/600x450/2A3A29/F4EFE6?text=Community+Gathering'"
+      >
+      <!-- Gradient overlay for text readability if text is placed over it -->
+      <div class="absolute inset-0 bg-gradient-to-t from-theme-parchment via-transparent to-transparent"></div>
+    </header>
+
+    <!-- Invitation Content -->
+    <article class="px-8 pt-6 pb-10 space-y-8">
+
+      <!-- Headers -->
+      <section class="text-center space-y-3 header-anim">
+        <div class="flex items-center justify-center space-x-2 text-theme-terracotta mb-2">
+          <!-- Decorative leaf/nature icon -->
+          <svg class="w-5 h-5" aria-hidden="true" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"></path>
+          </svg>
+          <span class="uppercase tracking-widest text-xs font-semibold">Mabon • Second Harvest</span>
+          <svg class="w-5 h-5" aria-hidden="true" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"></path>
+          </svg>
+        </div>
+        <h1 class="text-3xl font-bold text-theme-leaf tracking-tight" title="Event title">
+          Autumn Equinox
+        </h1>
+        <p class="text-theme-earth text-sm leading-relaxed text-balance-custom font-medium">
+          Join us as day and night find perfect balance. A time to gather, give thanks, and honor the turning of the wheel.
+        </p>
+      </section>
+
+      <!-- Divider -->
+      <hr class="border-theme-leaf/10 mx-auto w-1/2">
+
+      <!-- Event Details Block -->
+      <section class="space-y-5 details-anim">
+        <!-- Date & Time -->
+        <div class="flex items-start space-x-4">
+          <div class="icon-wrapper">
+            <svg class="w-5 h-5" aria-hidden="true" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+            </svg>
+          </div>
+          <div>
+            <h2 class="font-semibold text-theme-leaf text-base">Saturday, March 21, 2026</h2>
+            <p class="text-theme-earth text-sm">Arrival at 16:30 • Ritual at Sunset</p>
+          </div>
+        </div>
+
+        <!-- Location -->
+        <div class="flex items-start space-x-4">
+          <div class="icon-wrapper">
+            <svg class="w-5 h-5" aria-hidden="true" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+            </svg>
+          </div>
+          <div>
+            <h2 class="font-semibold text-theme-leaf text-base">The Community Gardens</h2>
+            <p class="text-theme-earth text-sm">Main Hearth & Altar Space</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Secondary Image (Balance theme) -->
+      <figure class="rounded-xl overflow-hidden aspect-[16/9] relative image-anim">
+        <!--
+          Image 6: The balance/scales image.
+          Ensure file is located at assets/equinox-balance.jpg
+        -->
+        <img
+          src="assets/equinox-balance.jpg"
+          alt="Illustration showing the balance of light and dark, day and night"
+          class="w-full h-full object-cover"
+          onerror="this.src='https://placehold.co/600x338/B3542B/F4EFE6?text=Equinox+Balance'"
+        >
+      </figure>
+
+      <!-- What to Bring -->
+      <section class="bg-theme-leaf/5 rounded-xl p-5 border border-theme-leaf/10 bring-anim">
+        <h3 class="font-bold text-theme-leaf mb-3 text-sm uppercase tracking-wide">What to Bring</h3>
+        <ul class="space-y-2 text-sm text-theme-earth">
+          <li class="flex items-start">
+            <span class="text-theme-gold mr-2">✦</span>
+            <span>A seasonal dish to share for our Cornucopia feast.</span>
+          </li>
+          <li class="flex items-start">
+            <span class="text-theme-gold mr-2">✦</span>
+            <span>An item of gratitude (fruit, leaf, or symbol) for the altar.</span>
+          </li>
+          <li class="flex items-start">
+            <span class="text-theme-gold mr-2">✦</span>
+            <span>An open heart and a written intention of what you are releasing.</span>
+          </li>
+        </ul>
+      </section>
+
+      <!-- CTA / RSVP -->
+      <section class="pt-4 pb-2 cta-anim">
+        <button
+          aria-label="RSVP to the Autumn Equinox gathering via WhatsApp"
+          class="w-full py-3.5 px-6 bg-theme-terracotta hover:bg-[#964522] text-theme-parchment font-semibold rounded-lg shadow-md transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-theme-terracotta focus:ring-offset-2 focus:ring-offset-theme-parchment flex items-center justify-center space-x-2"
+        >
+          <span>Confirm Attendance</span>
+          <svg class="w-4 h-4" aria-hidden="true" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+          </svg>
+        </button>
+        <p class="text-center text-xs text-theme-earth mt-4">
+          Please RSVP by March 18th to help us prepare the space.
+        </p>
+      </section>
+
+    </article>
+  </main>
+
+  <!-- GSAP Animations script -->
+  <script>
+    document.addEventListener("DOMContentLoaded", (event) => {
+      // Respect user motion preferences
+      const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+      if (!prefersReducedMotion) {
+        // Subtle entrance staggered animations
+        const tl = gsap.timeline({ defaults: { ease: "power2.out", duration: 0.8 } });
+
+        // Initial state
+        gsap.set(".header-anim, .details-anim, .image-anim, .bring-anim, .cta-anim", {
+          y: 20,
+          opacity: 0
+        });
+
+        // Staggered fade and slide up
+        tl.to(".header-anim", { y: 0, opacity: 1, delay: 0.2 })
+          .to(".details-anim", { y: 0, opacity: 1 }, "-=0.6")
+          .to(".image-anim", { y: 0, opacity: 1 }, "-=0.6")
+          .to(".bring-anim", { y: 0, opacity: 1 }, "-=0.6")
+          .to(".cta-anim", { y: 0, opacity: 1 }, "-=0.6");
+      }
+    });
+  </script>
+</body>
+</html>
