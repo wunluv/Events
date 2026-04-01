@@ -128,6 +128,29 @@
             box-shadow: 0 22px 42px rgba(36, 50, 58, 0.12);
         }
 
+        .vendor-tile::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background:
+                linear-gradient(180deg, rgba(17, 17, 17, 0.26) 0%, rgba(17, 17, 17, 0.50) 38%, rgba(17, 17, 17, 0.82) 100%),
+                linear-gradient(135deg, rgba(36, 50, 58, 0.54) 0%, rgba(36, 50, 58, 0.18) 55%, rgba(47, 74, 52, 0.34) 100%);
+            pointer-events: none;
+        }
+
+        .vendor-tile > * {
+            position: relative;
+            z-index: 1;
+        }
+
+        .vendor-tile .tile-art {
+            opacity: 0.34;
+        }
+
+        .vendor-tile .vendor-portrait {
+            filter: grayscale(1);
+        }
+
         @media (prefers-reduced-motion: reduce) {
             .card-lift:hover {
                 transform: none;
@@ -156,6 +179,7 @@
                 <a href="#about" class="rounded-full px-4 py-2 text-sm font-bold text-mabon-dusk transition hover:bg-mabon-parchment">About</a>
                 <a href="#experience" class="rounded-full px-4 py-2 text-sm font-bold text-mabon-dusk transition hover:bg-mabon-parchment">Experience</a>
                 <a href="#vendors" class="rounded-full px-4 py-2 text-sm font-bold text-mabon-dusk transition hover:bg-mabon-parchment">Stalls</a>
+                <a href="#raffle" class="rounded-full px-4 py-2 text-sm font-bold text-mabon-dusk transition hover:bg-mabon-parchment">Roof raffle</a>
                 <a href="#visit" class="rounded-full bg-mabon-dusk px-4 py-2 text-sm font-bold text-white transition hover:bg-mabon-forest">Visit</a>
             </nav>
         </div>
@@ -238,7 +262,7 @@
                     <h2 class="font-display type-h1 mt-5 text-mabon-dusk">The day holds more than a market.</h2>
                 </div>
 
-                <div class="mt-10 grid gap-6 md:grid-cols-2 xl:grid-cols-4">
+                <div class="mt-10 grid gap-6 md:grid-cols-2 xl:grid-cols-5">
                     <article class="card-lift rounded-[2rem] bg-mabon-cream p-6 shadow-card">
                         <div class="flex h-12 w-12 items-center justify-center rounded-2xl bg-mabon-ember/12 text-xl text-mabon-ember">✦</div>
                         <h3 class="font-display mt-5 text-3xl text-mabon-dusk">Local producers</h3>
@@ -248,6 +272,14 @@
                         <div class="flex h-12 w-12 items-center justify-center rounded-2xl bg-white/10 text-xl text-mabon-saffron">♫</div>
                         <h3 class="font-display mt-5 text-3xl text-white">Music & firelight</h3>
                         <p class="mt-3 text-sm leading-7 text-white/78">Live music, drumming, and bonfire warmth carry the gathering past a simple daytime browse.</p>
+                    </article>
+                    <article class="card-lift overflow-hidden rounded-[2rem] bg-white shadow-card">
+                        <img src="assets/pearce.webp" alt="Flooting Grooves performing live with flute and headphones" class="aspect-[4/3] w-full object-cover object-center" loading="lazy">
+                        <div class="p-6">
+                            <div class="flex h-12 w-12 items-center justify-center rounded-2xl bg-mabon-plum/12 text-xl text-mabon-plum">♬</div>
+                            <h3 class="font-display mt-5 text-3xl text-mabon-dusk">Music by Flooting Grooves</h3>
+                            <p class="mt-3 text-sm leading-7 text-mabon-dusk/74">A live musical thread woven through the day, bringing playful movement, atmosphere, and sonic texture to the market.</p>
+                        </div>
                     </article>
                     <article class="card-lift rounded-[2rem] bg-mabon-parchment p-6 shadow-card">
                         <div class="flex h-12 w-12 items-center justify-center rounded-2xl bg-mabon-moss/14 text-xl text-mabon-forest">☼</div>
@@ -298,56 +330,180 @@
                 </div>
 
                 <div class="mt-10 grid gap-6 sm:grid-cols-2 xl:grid-cols-3">
-                    <article class="card-lift overflow-hidden rounded-[2rem] bg-white shadow-card">
-                        <img src="assets/EquinoxBalance.webp" alt="Illustration representing seasonal produce and balance" class="aspect-[4/3] w-full object-cover">
-                        <div class="p-6">
-                            <span class="rounded-full bg-mabon-saffron/18 px-3 py-1 text-xs font-extrabold uppercase tracking-[0.18em] text-mabon-ember">Produce</span>
-                            <h3 class="font-display mt-4 text-3xl text-mabon-dusk">Seasonal harvest</h3>
-                            <p class="mt-3 text-sm leading-7 text-mabon-dusk/74">Fresh produce and ingredients grown with care and offered close to the source.</p>
+                    <article class="vendor-tile card-lift relative isolate flex min-h-[30rem] overflow-hidden rounded-[2rem] bg-mabon-dusk shadow-card">
+                        <img src="assets/EquinoxBalance.webp" alt="Seasonal produce and harvest illustration" class="tile-art absolute inset-0 h-full w-full object-cover" loading="lazy">
+                        <div class="absolute right-5 top-5 h-28 w-28 overflow-hidden rounded-[1.5rem] border border-white/20 bg-black/20 shadow-card backdrop-blur-sm">
+                            <img src="assets/suzie_mae.jpg" alt="Portrait of Suze Mae" class="vendor-portrait h-full w-full object-cover" loading="lazy">
                         </div>
-                    </article>
-                    <article class="card-lift overflow-hidden rounded-[2rem] bg-white shadow-card">
-                        <img src="assets/EquinoxTarot.webp" alt="Illustration suggesting crafted and symbolic goods" class="aspect-[4/3] w-full object-cover">
-                        <div class="p-6">
-                            <span class="rounded-full bg-mabon-plum/15 px-3 py-1 text-xs font-extrabold uppercase tracking-[0.18em] text-mabon-plum">Artisan</span>
-                            <h3 class="font-display mt-4 text-3xl text-mabon-dusk">Handmade wares</h3>
-                            <p class="mt-3 text-sm leading-7 text-mabon-dusk/74">Crafted goods, symbolic objects, and handmade offerings from local makers.</p>
-                        </div>
-                    </article>
-                    <article class="card-lift overflow-hidden rounded-[2rem] bg-white shadow-card">
-                        <img src="assets/EquinoxWiccans.webp" alt="Illustration representing botanicals and natural products" class="aspect-[4/3] w-full object-cover">
-                        <div class="p-6">
-                            <span class="rounded-full bg-mabon-moss/16 px-3 py-1 text-xs font-extrabold uppercase tracking-[0.18em] text-mabon-forest">Wellness</span>
-                            <h3 class="font-display mt-4 text-3xl text-mabon-dusk">Botanicals & care</h3>
-                            <p class="mt-3 text-sm leading-7 text-mabon-dusk/74">Natural preparations, botanicals, and goods that support slower seasonal living.</p>
-                        </div>
-                    </article>
-                    <article class="card-lift overflow-hidden rounded-[2rem] bg-white shadow-card">
-                        <img src="assets/HadesPersephone.webp" alt="Illustration evoking wine, myth, and seasonal drink" class="aspect-[4/3] w-full object-cover">
-                        <div class="p-6">
-                            <span class="rounded-full bg-mabon-ember/14 px-3 py-1 text-xs font-extrabold uppercase tracking-[0.18em] text-mabon-ember">Beverages</span>
-                            <h3 class="font-display mt-4 text-3xl text-mabon-dusk">Wine & warm pours</h3>
-                            <p class="mt-3 text-sm leading-7 text-mabon-dusk/74">Local wine and drinks that deepen the convivial, harvest-table atmosphere.</p>
-                        </div>
-                    </article>
-                    <article class="card-lift overflow-hidden rounded-[2rem] bg-white shadow-card">
-                        <img src="assets/MabonOstara.webp" alt="Illustration suggesting seasonal food and harvest abundance" class="aspect-[4/3] w-full object-cover">
-                        <div class="p-6">
-                            <span class="rounded-full bg-mabon-copper/14 px-3 py-1 text-xs font-extrabold uppercase tracking-[0.18em] text-mabon-copper">Food</span>
-                            <h3 class="font-display mt-4 text-3xl text-mabon-dusk">Seasonal eats</h3>
-                            <p class="mt-3 text-sm leading-7 text-mabon-dusk/74">Food rooted in local ingredients and the pleasure of eating in good company.</p>
-                        </div>
-                    </article>
-                    <article class="card-lift rounded-[2rem] border border-dashed border-mabon-oat bg-mabon-cream p-6 shadow-card">
-                        <div class="flex h-full flex-col justify-between">
-                            <div>
-                                <span class="inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-mabon-saffron/18 text-2xl text-mabon-ember">🌱</span>
-                                <h3 class="font-display mt-5 text-3xl text-mabon-dusk">More to be revealed</h3>
-                                <p class="mt-3 text-sm leading-7 text-mabon-dusk/74">Additional stall holders may still join the gathering, but the page no longer leans on empty future-year placeholders.</p>
+                        <div class="flex w-full flex-col justify-between p-6">
+                            <div class="max-w-[calc(100%-8.5rem)]">
+                                <h3 class="font-display text-3xl text-white">Suze Mae</h3>
+                                <span class="mt-3 inline-flex rounded-full border border-white/15 bg-black/30 px-3 py-1 text-xs font-extrabold uppercase tracking-[0.18em] text-mabon-parchment backdrop-blur">Wellness & treasures</span>
                             </div>
-                            <p class="mt-8 text-xs font-extrabold uppercase tracking-[0.18em] text-mabon-forest/60">Community grown</p>
+                            <div class="rounded-[1.6rem] border border-white/10 bg-black/48 p-5 backdrop-blur-md">
+                                <p class="text-sm leading-7 text-white/90">Hope to see you on Sunday! I’ll be at the Mabon Mystery Market, at Beeja Mara with new stock and special prices of Castor Oil and Magnesium Spray; tons of Jumble with 2nd hand treasures for sale; and Angel Card Readings 🧚✨💛</p>
+                            </div>
                         </div>
                     </article>
+
+                    <article class="vendor-tile card-lift relative isolate flex min-h-[30rem] overflow-hidden rounded-[2rem] bg-mabon-dusk shadow-card">
+                        <img src="assets/EquinoxTarot.webp" alt="Illustration suggesting handpicked wares and symbolic objects" class="tile-art absolute inset-0 h-full w-full object-cover" loading="lazy">
+                        <div class="absolute right-5 top-5 h-28 w-28 overflow-hidden rounded-[1.5rem] border border-white/20 bg-black/20 shadow-card backdrop-blur-sm">
+                            <img src="assets/stella_madre.jpg" alt="Portrait of Stella Madre" class="vendor-portrait h-full w-full object-cover" loading="lazy">
+                        </div>
+                        <div class="flex w-full flex-col justify-between p-6">
+                            <div class="max-w-[calc(100%-8.5rem)]">
+                                <h3 class="font-display text-3xl text-white">Stella Madre</h3>
+                                <span class="mt-3 inline-flex rounded-full border border-white/15 bg-black/30 px-3 py-1 text-xs font-extrabold uppercase tracking-[0.18em] text-mabon-parchment backdrop-blur">Vintage & travel finds</span>
+                            </div>
+                            <div class="rounded-[1.6rem] border border-white/10 bg-black/48 p-5 backdrop-blur-md">
+                                <p class="text-sm leading-7 text-white/90">I’ll have curated pre-loved items from my travels. Vintage clothes, trinkets, books, essential oils, and stories!</p>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="vendor-tile card-lift relative isolate flex min-h-[30rem] overflow-hidden rounded-[2rem] bg-mabon-dusk shadow-card">
+                        <img src="assets/EquinoxWiccans.webp" alt="Illustration representing botanicals and natural abundance" class="tile-art absolute inset-0 h-full w-full object-cover" loading="lazy">
+                        <div class="absolute right-5 top-5 h-28 w-28 overflow-hidden rounded-[1.5rem] border border-white/20 bg-black/20 shadow-card backdrop-blur-sm">
+                            <img src="assets/wild_hive.jpeg" alt="Wild Hive nougat branding" class="vendor-portrait h-full w-full object-cover" loading="lazy">
+                        </div>
+                        <div class="flex w-full flex-col justify-between p-6">
+                            <div class="max-w-[calc(100%-8.5rem)]">
+                                <h3 class="font-display text-3xl text-white">Wild Hive</h3>
+                                <span class="mt-3 inline-flex rounded-full border border-white/15 bg-black/30 px-3 py-1 text-xs font-extrabold uppercase tracking-[0.18em] text-mabon-parchment backdrop-blur">Food & refreshment</span>
+                            </div>
+                            <div class="rounded-[1.6rem] border border-white/10 bg-black/48 p-5 backdrop-blur-md">
+                                <p class="text-sm leading-7 text-white/90">I’ll be at the Mabon Mystery Market, at Beeja Mara with my handcrafted nougat, raspberry rooibos iced tea and mini quiches.</p>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="vendor-tile card-lift relative isolate flex min-h-[30rem] overflow-hidden rounded-[2rem] bg-mabon-dusk shadow-card">
+                        <img src="assets/HadesPersephone.webp" alt="Illustration evoking warm food, myth, and hospitality" class="tile-art absolute inset-0 h-full w-full object-cover" loading="lazy">
+                        <div class="absolute right-5 top-5 h-28 w-28 overflow-hidden rounded-[1.5rem] border border-white/20 bg-black/20 shadow-card backdrop-blur-sm">
+                            <img src="assets/serge.jpeg" alt="Portrait of Sergelicious" class="vendor-portrait h-full w-full object-cover" loading="lazy">
+                        </div>
+                        <div class="flex w-full flex-col justify-between p-6">
+                            <div class="max-w-[calc(100%-8.5rem)]">
+                                <h3 class="font-display text-3xl text-white">Sergelicious</h3>
+                                <span class="mt-3 inline-flex rounded-full border border-white/15 bg-black/30 px-3 py-1 text-xs font-extrabold uppercase tracking-[0.18em] text-mabon-parchment backdrop-blur">Food & jewellery</span>
+                            </div>
+                            <div class="rounded-[1.6rem] border border-white/10 bg-black/48 p-5 backdrop-blur-md">
+                                <p class="text-sm leading-7 text-white/90">A mountain chef with island soul, where every dish is wisdom, love, and gratitude served warm. Home crafted deliciousness and hand crafted jewellery.</p>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="vendor-tile card-lift relative isolate flex min-h-[30rem] overflow-hidden rounded-[2rem] bg-mabon-dusk shadow-card">
+                        <img src="assets/MabonOstara.webp" alt="Illustration suggesting herbal remedies and seasonal care" class="tile-art absolute inset-0 h-full w-full object-cover" loading="lazy">
+                        <div class="absolute right-5 top-5 h-28 w-28 overflow-hidden rounded-[1.5rem] border border-white/20 bg-black/20 shadow-card backdrop-blur-sm">
+                            <img src="assets/hogsback_herbs.png" alt="Hogsback Herbs echinacea honey jars" class="vendor-portrait h-full w-full object-cover" loading="lazy">
+                        </div>
+                        <div class="flex w-full flex-col justify-between p-6">
+                            <div class="max-w-[calc(100%-8.5rem)]">
+                                <h3 class="font-display text-3xl text-white">Hogsback Herbs by Carl Hansmann</h3>
+                                <span class="mt-3 inline-flex rounded-full border border-white/15 bg-black/30 px-3 py-1 text-xs font-extrabold uppercase tracking-[0.18em] text-mabon-parchment backdrop-blur">Herbal wellness</span>
+                            </div>
+                            <div class="rounded-[1.6rem] border border-white/10 bg-black/48 p-5 backdrop-blur-md">
+                                <p class="text-sm leading-7 text-white/90">Hogsback Herbs started in 2004 in the mountain village of Hogsback in the Eastern Cape. It was made to provide a natural preservative free medicine for my children and the community I lived in. I&apos;ll be offering echinacea honey and other organic medicinal infusions.</p>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="vendor-tile card-lift relative isolate flex min-h-[30rem] overflow-hidden rounded-[2rem] bg-mabon-dusk shadow-card">
+                        <img src="assets/EquinoxRitual.webp" alt="Illustration evoking rest, ritual, and embodied care" class="tile-art absolute inset-0 h-full w-full object-cover" loading="lazy">
+                        <div class="absolute right-5 top-5 flex h-28 w-28 items-center justify-center rounded-[1.5rem] border border-white/20 bg-black/28 text-5xl text-mabon-parchment shadow-card backdrop-blur-sm" aria-hidden="true">✦</div>
+                        <div class="flex w-full flex-col justify-between p-6">
+                            <div class="max-w-[calc(100%-8.5rem)]">
+                                <h3 class="font-display text-3xl text-white">Helen King</h3>
+                                <span class="mt-3 inline-flex rounded-full border border-white/15 bg-black/30 px-3 py-1 text-xs font-extrabold uppercase tracking-[0.18em] text-mabon-parchment backdrop-blur">Massage & relaxation</span>
+                            </div>
+                            <div class="rounded-[1.6rem] border border-white/10 bg-black/48 p-5 backdrop-blur-md">
+                                <p class="text-sm leading-7 text-white/90">I’ll be at the Mabon Mystery Market, at Beeja Mara with my massage hands and oils. Come and relax under the trees for a 20 min neck and shoulders or foot massage.</p>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="vendor-tile card-lift relative isolate flex min-h-[30rem] overflow-hidden rounded-[2rem] bg-mabon-dusk shadow-card">
+                        <img src="assets/EquinoxTarot.webp" alt="Illustration evoking jewellery, adornment, and treasure" class="tile-art absolute inset-0 h-full w-full object-cover" loading="lazy">
+                        <div class="absolute right-5 top-5 h-28 w-28 overflow-hidden rounded-[1.5rem] border border-white/20 bg-black/20 shadow-card backdrop-blur-sm">
+                            <img src="assets/purple_hat.jpeg" alt="Purple Hat Jewellery poster by Fiona" class="vendor-portrait h-full w-full object-cover" loading="lazy">
+                        </div>
+                        <div class="flex w-full flex-col justify-between p-6">
+                            <div class="max-w-[calc(100%-8.5rem)]">
+                                <h3 class="font-display text-3xl text-white">Purple Hat Jewellery by Fiona</h3>
+                                <span class="mt-3 inline-flex rounded-full border border-white/15 bg-black/30 px-3 py-1 text-xs font-extrabold uppercase tracking-[0.18em] text-mabon-parchment backdrop-blur">Vintage jewellery</span>
+                            </div>
+                            <div class="rounded-[1.6rem] border border-white/10 bg-black/48 p-5 backdrop-blur-md">
+                                <p class="text-sm leading-7 text-white/90">Vintage and pre-loved jewellery, stylish treasures, and affordable finds with everything under R100, plus a Dig for Treasure fundraiser.</p>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="vendor-tile card-lift relative isolate flex min-h-[30rem] overflow-hidden rounded-[2rem] bg-mabon-dusk shadow-card sm:col-span-2 xl:col-span-1">
+                        <img src="assets/HadesPersephone.webp" alt="Illustration evoking wine bottles and harvest fermentation" class="tile-art absolute inset-0 h-full w-full object-cover" loading="lazy">
+                        <div class="absolute right-5 top-5 h-28 w-28 overflow-hidden rounded-[1.5rem] border border-white/20 bg-black/20 shadow-card backdrop-blur-sm">
+                            <img src="assets/brew_chamber.jpg" alt="Bottled fruit wines from The Brew Chamber by Pearce" class="vendor-portrait h-full w-full object-cover" loading="lazy">
+                        </div>
+                        <div class="flex w-full flex-col justify-between p-6">
+                            <div class="max-w-[calc(100%-8.5rem)]">
+                                <h3 class="font-display text-3xl text-white">The Brew Chamber by Pearce</h3>
+                                <span class="mt-3 inline-flex rounded-full border border-white/15 bg-black/30 px-3 py-1 text-xs font-extrabold uppercase tracking-[0.18em] text-mabon-parchment backdrop-blur">Fruit wines</span>
+                            </div>
+                            <div class="rounded-[1.6rem] border border-white/10 bg-black/48 p-5 backdrop-blur-md">
+                                <p class="text-sm leading-7 text-white/90">All my fruit wines generally go through 2 ferments and I use no artificial flavorings or preservatives. Ingredients used are: fruit, rain water, brown cane sugar and wine yeast. All wines get racked at least once and then bottled for at least 3 months before they are ready for release.</p>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section id="raffle" class="bg-white/70 px-5 py-16 lg:px-8 lg:py-20" aria-labelledby="raffle-heading">
+            <div class="mx-auto max-w-7xl">
+                <div class="max-w-3xl">
+                    <span class="ring-divider">Roof raffle</span>
+                    <h2 id="raffle-heading" class="font-display type-h1 mt-5 text-mabon-dusk">A generous raffle for a very practical roof.</h2>
+                    <p class="mt-5 type-body text-mabon-dusk/76">We’re raising funds to fix the Beeja Mara roof so the space can keep holding gatherings, meals, music, and all the beautiful mess in between.</p>
+                </div>
+
+                <div class="mt-10 grid gap-8 lg:grid-cols-[0.95fr_1.05fr] lg:items-start">
+                    <article class="overflow-hidden rounded-[2rem] bg-mabon-dusk text-white shadow-float">
+                        <img src="assets/roof_raffle.jpeg" alt="Roof raffle poster with QR code for Mabon Mystery Market at Beeja Mara" class="w-full object-cover" loading="lazy">
+                        <div class="border-t border-white/10 bg-white/6 p-6 backdrop-blur-sm">
+                            <p class="text-xs font-extrabold uppercase tracking-[0.22em] text-mabon-saffron">Tickets</p>
+                            <div class="mt-4 grid gap-3 sm:grid-cols-2">
+                                <div class="rounded-[1.4rem] bg-white/10 p-4">
+                                    <p class="text-sm font-extrabold uppercase tracking-[0.16em] text-white/68">Via QR code</p>
+                                    <p class="mt-2 font-display text-3xl text-white">R120</p>
+                                </div>
+                                <div class="rounded-[1.4rem] bg-white/10 p-4">
+                                    <p class="text-sm font-extrabold uppercase tracking-[0.16em] text-white/68">On the day</p>
+                                    <p class="mt-2 font-display text-3xl text-white">R100</p>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+
+                    <div class="space-y-6 rounded-[2rem] border border-mabon-oat/60 bg-white/85 p-8 shadow-card backdrop-blur">
+                        <p class="type-body text-mabon-dusk/78">We’re raising funds to fix the Beeja Mara roof (so Daryl can finally retire what Stella calls the bucket dance 😂)… and honestly? This raffle is stacked.</p>
+                        <p class="type-body text-mabon-dusk/78">We’re talking prizes worth over R3000 🤯 Think: a 2-night camping stay for 6 at Wild Fox Hill, dreamy homemade treats, plum wine, magical mead, healing kefir, and even a massage with the marvelous Miki 💆‍♀️🌿</p>
+                        <p class="type-body text-mabon-dusk/78">👀 We’ll be teasing more goodies as we go… but trust me, this is not your average raffle.</p>
+
+                        <div class="rounded-[1.7rem] bg-mabon-parchment p-6 shadow-card">
+                            <p class="text-xs font-extrabold uppercase tracking-[0.22em] text-mabon-ember">How to enter</p>
+                            <ol class="mt-4 space-y-3 text-sm leading-7 text-mabon-dusk/78">
+                                <li><strong class="text-mabon-dusk">1.</strong> Pick your number/s (1–250 — yes, you can grab more than one 😉)</li>
+                                <li><strong class="text-mabon-dusk">2.</strong> Use your numbers (for example 77, 34, 13) plus <span class="font-bold text-mabon-ember">Roof Raffle</span> as your reference</li>
+                                <li><strong class="text-mabon-dusk">3.</strong> Fill in your details and pay via QR</li>
+                            </ol>
+                        </div>
+
+                        <div class="rounded-[1.7rem] bg-mabon-cream p-6 shadow-card">
+                            <p class="text-xs font-extrabold uppercase tracking-[0.22em] text-mabon-ember">Or on the day</p>
+                            <p class="mt-3 text-sm leading-7 text-mabon-dusk/76">Grab your tickets in person from Suzie-Mae or Stella at the Corner Caravan 💛</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
